@@ -18,63 +18,86 @@
 
     <header id="site_header">
 
-        <div class="logo">
+        <div class="header_container">
 
-            <img src="" alt="" class="logo_image">
+            <div class="logo_container  d-flex justify-content-center align-items-center"">
 
-            <div class="logo_text">
-                Campo Minato
+                <div class="logo_image m-3">
 
+                    <img src="./assets/img/logo.png" alt="" class="logo">
+                    <!-- /.logo -->
+
+                </div>
+                <!-- ./logo_image -->
+
+                
+    
+                <h1 class="logo_text">
+                    Campo Minato
+    
+                </h1>
+                <!-- ./logo_text -->
+    
+                
             </div>
+            <!-- /.logo_container -->
+    
+    
+            <form class= "level d-flex justify-content-center align-items-center">
+    
+                <label for="" class="difficult">
+        
+                    Difficoltà:
+        
+                </label>
+                <!-- ./difficult -->
+        
+                <select name="" class="selection mx-2">
 
+                    <option class="easy">
+                        Easy
+                    </option>
+                    <!-- /.easy -->
+        
+                    <option class="medium">
+                        Medium
+                    </option>
+                    <!-- ./medium -->
+        
+                    <option class="hard">
+                        Hard
+                    </option>
+                    <!-- ./hard -->
+        
+        
+                </select>
+                <!-- #selector -->
+    
+                <div class="actions">
             
+                    <button id="play" type="button" class="btn d-flex justify-content-center align-items-center"> Play</button>
+                    <!-- /#play -->
+    
+                </div>
+                <!-- ./actions -->
+        
+        
+            </form>
+            <!-- ./level -->
+
+
+
+
         </div>
 
-
-        <form class= "level">
-
-            <label for="" class="difficult">
-    
-                Difficoltà:
-    
-            </label>
-            <!-- ./difficult -->
-    
-            <select name="" class="selection">
-                <option class="easy">
-                    Easy
-                </option>
-    
-                <option class="medium">
-                    Medium
-                </option>
-    
-                <option class="hard">
-                    Hard
-                </option>
-    
-    
-            </select>
-            <!-- #selector -->
-
-            <div class="actions">
-        
-                <button id="play" type="button" class="btn btn-primary">Play</button>
-                <!-- /#play -->
-
-            </div>
-            <!-- ./actions -->
-    
-    
-        </form>
-        <!-- ./level -->
+       
 
     </header>
     <!-- /#site_header -->
 
     <main id="site_main">
 
-        <div class="container my-4">
+        <div class="container d-flex justify-content-center align-items-center h-100 ">
 
             <div class="cells d-flex flex-wrap">
             
@@ -90,7 +113,15 @@
 
     <footer id="site_footer">
 
+        <div class="footer_container d-flex align-items-center h-100 px-4">
 
+            <div class="made">
+                Made with &hearts; by <a href="#">Boolean</a>
+            </div>
+
+        </div>
+
+    
     </footer>
     <!-- /#site_footer -->
 
