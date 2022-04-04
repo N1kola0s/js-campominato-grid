@@ -55,18 +55,27 @@ function selectElements (selector, active_class){
         const cellItem = cells[i];
         /* console.log(cellItem); */
 
-
+        //creo uno span che assegni dei numeri all'interno delle celle che partano da 1 alla lunghezza della lista
+        const  spanElement = document.createElement("span");
+        spanElement.append(i + 1);
+        cellItem.append(spanElement);
+        
         //creo una funzione che mi permette di aggiungere al singolo oggetto un evento al click
         cellItem.addEventListener("click", function(){
 
-        console.log(this, i);
-        this.classList.add(active_class);
-    })
+            console.log(this, i);
+            this.classList.add(active_class);
+        })
+    }
+
+
 
 }
 
-}
 
 
 selectElements (".cell", "active")
+
+
+
 
