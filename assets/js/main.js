@@ -6,16 +6,26 @@ con difficoltà 2 => tra 1 e 81
 con difficoltà 3 => tra 1 e 49
 Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro. */
 
+
+
+//dichiaro una variabile che richiami button 
+
 const btn = document.getElementById ("play");
+
+//eseguo una funzione al suo click che generi tre griglie differenti in base al livello della difficoltà
+
 
 btn.addEventListener ("click", function GenerateGrid(selector){
 
     /* console.log("click") */
 
+    //dichiaro una variabile in cui andrà il valore contenuto all'interno del mio selettore della difficoltà
+
     let difficult = document.querySelector(".selection").value ;
 
+
+    //imposto una condizione in cui stabilisco che tipo di griglia deve essere generata in base ai diversi livelli di difficoltà 
     if (difficult == "Easy"){
-        console.log(difficult)
         
         generateGrid(".cells", "div", "cell", 100);
         selectElements (".cell", "active")
@@ -41,7 +51,7 @@ btn.addEventListener ("click", function GenerateGrid(selector){
 }) 
 
 
-
+//creo una funzione per la generazione della griglia
 function generateGrid (selector, tag_name, class_name, limit) {
 
     const cellsElement = document.querySelector(selector)
@@ -59,9 +69,7 @@ function generateGrid (selector, tag_name, class_name, limit) {
 }
 
 
-
-
-
+//creo una funzione per selezionare le celle contenute nella griglia e modificarle
 function selectElements (selector, active_class){
     //creo una variabile in cui c'è una lista con tutte le mie celle
 
