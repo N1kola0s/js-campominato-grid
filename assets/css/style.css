@@ -1,11 +1,7 @@
+/* Commons */
 
 body {
     background-color: aquamarine;
-}
-
-header {
-    background-color: white;
-    height: 80px;
 }
 
 .header_container, .footer_container {
@@ -13,6 +9,13 @@ header {
     justify-content: space-between;
     width: 80%;
     margin:auto;
+}
+
+/* HEADER */
+
+header {
+    background-color: white;
+    height: 80px;
 }
 
 .logo_image {
@@ -32,11 +35,19 @@ img{
     max-height: 100%;
 }
 
+.btn{
+    background-color: lightgray;
+    color:black;
+    height: 20px;
+    padding: 12px 10px;
+    width:100px;
+}
+
+/* MAIN */
 
 main{
     height: calc(100vh - 140px);
 }
-
 
 
 .container {
@@ -46,7 +57,6 @@ main{
 
 
 .cell {
-    width: calc(100% / 10);
     aspect-ratio: 1 / 1;
     border: 1px solid black;
     color:black;
@@ -55,27 +65,29 @@ main{
     justify-content: center;
 }
 
+.easy_grid {
+    width: calc(100% / 10);
+}
+
+.medium_grid {
+    width: calc(100% / 9);
+
+}
+
+.hard_grid {
+    width: calc(100% / 7);
+
+}
+
 .active{
     background-color:cornflowerblue ;
     color:white;
 }
 
-.btn{
-    background-color: lightgray;
-    color:black;
-    height: 20px;
-    padding: 12px 10px;
-    width:100px;
-}
+/* FOOTER */
 
 footer {
     background-color: white;
     height: 60px;
     
 }
-
-/* footer .container_footer{
-    width: 80%;
-    margin:auto;
-   
-} */

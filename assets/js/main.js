@@ -27,21 +27,21 @@ btn.addEventListener ("click", function GenerateGrid(selector){
     //imposto una condizione in cui stabilisco che tipo di griglia deve essere generata in base ai diversi livelli di difficoltà 
     if (difficult == "Easy"){
         
-        generateGrid(".cells", "div", "cell", 100);
+        generateGrid(".cells", "div", "cell", 100, "easy_grid");
         selectElements (".cell", "active")
         
 
     }
 
     else if (difficult == "Medium" ){
-        generateGrid(".cells", "div", "cell", 81);
+        generateGrid(".cells", "div", "cell", 81, "medium_grid");
         selectElements (".cell", "active")
         
 
     }
 
     else if (difficult == "Hard") {
-        generateGrid(".cells", "div", "cell", 49);
+        generateGrid(".cells", "div", "cell", 49, "hard_grid");
         selectElements (".cell", "active")
 
     
@@ -52,16 +52,20 @@ btn.addEventListener ("click", function GenerateGrid(selector){
 
 
 //creo una funzione per la generazione della griglia
-function generateGrid (selector, tag_name, class_name, limit) {
+function generateGrid (selector, tag_name, class_name, limit, level) {
 
     const cellsElement = document.querySelector(selector)
+    //pulisco la griglia inserendo un elemento vuoto nella dom
     cellsElement.innerHTML = " " ;
     
     for(let i = 1; i <= limit; i++) {
-
+        //creo l'elemento cella da inserire nella griglia
         let cell = document.createElement(tag_name);
-       
+        //appendo delle classi per dargli determinate caratteristiche di stile
         cell.classList.add(class_name);
+        //determino con una classe la larghezza alla griglia in base alla difficoltà 
+        cell.classList.add(level);
+        //appendo alla cella il numero progressivo nel ciclo
         cellsElement.append(cell);
 
     }
@@ -72,10 +76,10 @@ function generateGrid (selector, tag_name, class_name, limit) {
 //creo una funzione per selezionare le celle contenute nella griglia e modificarle
 function selectElements (selector, active_class){
     //creo una variabile in cui c'è una lista con tutte le mie celle
-
+    //seleziono tutte le celle con querySelectorAll
     const cells = document.querySelectorAll(selector);
 
-    //creo un ciclo for il cui limite è la lunghezza della lista di celle, che mi permetterà di selezionare le singole celle della lista
+    //creo un ciclo for per tutti gli elementi della dom, il limite è la lunghezza della lista di celle. mi permetterà di selezionare le singole celle della lista
 
     for (let i = 0; i < cells.length; i++) {
         const cellItem = cells[i];
@@ -86,10 +90,12 @@ function selectElements (selector, active_class){
         spanElement.append(i + 1);
         cellItem.append(spanElement);
         
-        //creo una funzione che mi permette di aggiungere al singolo oggetto un evento al click
+        //creo una funzione che mi permette di aggiungere al singolo oggetto un evento al click con event listener
         cellItem.addEventListener("click", function(){
 
-            console.log(this, i);
+            /* console.log(this, i); */
+
+            //evidenzio la cella con il colore azzurro alla selezione
             this.classList.toggle(active_class);
         })
     }
